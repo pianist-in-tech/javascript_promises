@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // 1.Request a single card from a newly shuffled deck. 
     axios.get(`${baseURL}/new/draw/`).then(data => {
-      console.log (data)
       let { suit, value } = data.data.cards[0];
       console.log(`${value.toLowerCase()} of ${suit.toLowerCase()}`);
     });
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
         axios.get(`${baseURL}/${deckId}/draw/`)
             .then(data => {
             let cardSrc = data.data.cards[0].image;
-            console.log(data)
             let angle = Math.random() * 90 - 45;
             let randomX = Math.random() * 40 - 20;
             let randomY = Math.random() * 40 - 20;
